@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Knowledge Base | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body class="section-dark">
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <a href="user-dashboard.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                </a>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="user-dashboard.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span>Overview</span>
+                </a>
+                
+                <a href="user-portfolio.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    <span>My Portfolio</span>
+                </a>
+                <a href="user-transactions.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="user-security.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    <span>Security Center</span>
+                </a>
+                <a href="user-resources.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <span>FAQ &amp; Guides</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-item" style="color: var(--status-failed-text);">
+                    <svg viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4h-2v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="db-header-left">
+                    <span class="db-hamburger">&#9776;</span>
+                    <h2 class="db-title\">Investor Knowledge Base</h2>
+                </div>
+
+                <div class="db-header-right">
+                    <!-- Notifications -->
+                    <div class="db-bell" onclick="alert('Demo: System health reports verified. No anomalies detected.')">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                        <span class="db-bell-dot"></span>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="db-profile" onclick="location.href='admin-dashboard.html'">
+                        <div class="profile-avatar">ID</div>
+                        <div class="profile-info">
+                            <h4>Investor Demo</h4>
+                            <span>Access: Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="db-card" style="margin-bottom: 30px;">
+                    <h3 class="db-card-title" style="margin-bottom: 20px;">Frequently Asked Questions</h3>
+                    <div class="faq-accordion" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="faq-item" style="border-radius: var(--border-radius); border: 1px solid var(--border-dark); background: var(--bg-dark-secondary); overflow: hidden; transition: var(--transition-normal);">
+                            <div class="faq-header" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600;">
+                                <span>What is blockchain asset management?</span>
+                                <span class="faq-icon-toggle">+</span>
+                            </div>
+                            <div class="faq-body" style="max-height: 0; overflow: hidden; transition: max-height var(--transition-normal) ease-out, padding var(--transition-normal) ease-out; padding: 0 20px; color: var(--text-dark-muted); font-size: 0.85rem;">
+                                <p style="padding-bottom: 15px;">It is the process of auditing, tracking, and allocating digital assets across cryptographic chains using read-only API logs, address observers, and index calculations.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item" style="border-radius: var(--border-radius); border: 1px solid var(--border-dark); background: var(--bg-dark-secondary); overflow: hidden; transition: var(--transition-normal);">
+                            <div class="faq-header" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600;">
+                                <span>How can I monitor my portfolio?</span>
+                                <span class="faq-icon-toggle">+</span>
+                            </div>
+                            <div class="faq-body" style="max-height: 0; overflow: hidden; transition: max-height var(--transition-normal) ease-out, padding var(--transition-normal) ease-out; padding: 0 20px; color: var(--text-dark-muted); font-size: 0.85rem;">
+                                <p style="padding-bottom: 15px;">You can connect public wallet addresses. Stackly scans ledger histories and updates your balances automatically in the console.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-card">
+                    <h3 class="db-card-title" style="margin-bottom: 20px;">Developer API preview</h3>
+                    <div class="resource-card" style="padding: 20px; font-family: monospace; font-size: 0.82rem; background: #070c19; line-height: 1.6; border-color: var(--accent-cyan); margin:0;">
+                        <div style="color: #64748b; margin-bottom: 10px;">// Querying address valuation index</div>
+                        <div>curl -X POST https://api.stackly.protocol/v1/valuation \</div>
+                        <div>  -H "Authorization: Bearer $API_KEY" \</div>
+                        <div>  -d '{"address": "0x71C...897", "chain": "ethereum"}'</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

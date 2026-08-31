@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Portfolio | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body class="section-dark">
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <a href="user-dashboard.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                </a>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="user-dashboard.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span>Overview</span>
+                </a>
+                
+                <a href="user-portfolio.html" class="sidebar-item active" >
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    <span>My Portfolio</span>
+                </a>
+                <a href="user-transactions.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="user-security.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    <span>Security Center</span>
+                </a>
+                <a href="user-resources.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <span>FAQ &amp; Guides</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-item" style="color: var(--status-failed-text);">
+                    <svg viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4h-2v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="db-header-left">
+                    <span class="db-hamburger">&#9776;</span>
+                    <h2 class="db-title\">Investor Portfolio</h2>
+                </div>
+
+                <div class="db-header-right">
+                    <!-- Notifications -->
+                    <div class="db-bell" onclick="alert('Demo: System health reports verified. No anomalies detected.')">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                        <span class="db-bell-dot"></span>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="db-profile" onclick="location.href='admin-dashboard.html'">
+                        <div class="profile-avatar">ID</div>
+                        <div class="profile-info">
+                            <h4>Investor Demo</h4>
+                            <span>Access: Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Staking & Volatility Header -->
+                <div class="db-stats-grid">
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Net Volatility (30D)</span>
+                        <div class="widget-val">12.4%</div>
+                        <span class="widget-perf down">▼ Low Risk Profile</span>
+                    </div>
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Sharpe Ratio</span>
+                        <div class="widget-val">2.84</div>
+                        <span class="widget-perf up">▲ Optimal Returns</span>
+                    </div>
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Rebalancing Threshold</span>
+                        <div class="widget-val">5.0%</div>
+                        <span class="widget-perf up">▲ Aligned</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Asset Holdings Table -->
+                <div class="db-card" style="margin-bottom: 30px;">
+                    <h3 class="db-card-title" style="margin-bottom: 20px;">Asset Holdings Allocation</h3>
+                    <div class="table-container">
+                        <table class="tx-table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Balance</th>
+                                    <th>Value (USD)</th>
+                                    <th>Avg Buy Price</th>
+                                    <th>24h Change</th>
+                                    <th>Quick Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: 600; color: #fff;">Bitcoin (BTC)</td>
+                                    <td>0.82 BTC</td>
+                                    <td>$46,664</td>
+                                    <td>$51,200</td>
+                                    <td style="color: var(--status-completed-text);">+2.15%</td>
+                                    <td><button class="btn btn-cyan btn-sm" onclick="alert('Trade initiated for BTC')">Trade</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: #fff;">Ethereum (ETH)</td>
+                                    <td>12.50 ETH</td>
+                                    <td>$39,975</td>
+                                    <td>$2,850</td>
+                                    <td style="color: var(--status-completed-text);">+4.80%</td>
+                                    <td><button class="btn btn-cyan btn-sm" onclick="alert('Trade initiated for ETH')">Trade</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: #fff;">USD Coin (USDC)</td>
+                                    <td>25,000 USDC</td>
+                                    <td>$25,000</td>
+                                    <td>$1.00</td>
+                                    <td style="color: var(--text-dark-muted);">0.00%</td>
+                                    <td><button class="btn btn-secondary btn-sm" style="border: 1px solid var(--border-dark);" onclick="alert('Lending initiated for USDC')">Lend</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: #fff;">Solana (SOL)</td>
+                                    <td>138.40 SOL</td>
+                                    <td>$19,811</td>
+                                    <td>$112.50</td>
+                                    <td style="color: var(--status-failed-text);">-1.42%</td>
+                                    <td><button class="btn btn-cyan btn-sm" onclick="alert('Trade initiated for SOL')">Trade</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Rebalancing Target Tool -->
+                <div class="db-card">
+                    <h3 class="db-card-title" style="margin-bottom: 20px;">Tactical Rebalancing Estimator</h3>
+                    <p style="color: var(--text-dark-muted); font-size: 0.88rem; margin-bottom: 20px; line-height: 1.5;">Define target allocation metrics below to evaluate drift and calculate buy/sell adjustments required to align your portfolio.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; margin-bottom: 8px; font-weight: 600;">BTC Target (%)</label>
+                            <input type="number" id="target-btc" class="form-input" value="40" style="background: var(--bg-dark-primary); border: 1px solid var(--border-dark); padding: 10px; color: #fff; width: 100%; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; margin-bottom: 8px; font-weight: 600;">ETH Target (%)</label>
+                            <input type="number" id="target-eth" class="form-input" value="30" style="background: var(--bg-dark-primary); border: 1px solid var(--border-dark); padding: 10px; color: #fff; width: 100%; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; margin-bottom: 8px; font-weight: 600;">USDC Target (%)</label>
+                            <input type="number" id="target-usdc" class="form-input" value="20" style="background: var(--bg-dark-primary); border: 1px solid var(--border-dark); padding: 10px; color: #fff; width: 100%; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.8rem; margin-bottom: 8px; font-weight: 600;">SOL Target (%)</label>
+                            <input type="number" id="target-sol" class="form-input" value="10" style="background: var(--bg-dark-primary); border: 1px solid var(--border-dark); padding: 10px; color: #fff; width: 100%; border-radius: 6px;">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" style="width: 100%;" onclick="calculateRebalance()">Calculate Tactical Drift</button>
+                    
+                    <div id="rebalance-results" style="margin-top: 20px; font-family: monospace; font-size: 0.88rem; color: var(--accent-cyan); display: none; padding: 15px; border: 1px dashed var(--border-dark); border-radius: 6px; background: rgba(0,240,255,0.02); line-height: 1.6;">
+                        <!-- Dynamic Results go here -->
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                function calculateRebalance() {
+                    const btc = parseFloat(document.getElementById('target-btc').value) || 0;
+                    const eth = parseFloat(document.getElementById('target-eth').value) || 0;
+                    const usdc = parseFloat(document.getElementById('target-usdc').value) || 0;
+                    const sol = parseFloat(document.getElementById('target-sol').value) || 0;
+                    
+                    const total = btc + eth + usdc + sol;
+                    if (total !== 100) {
+                        alert('Error: Target allocations must sum to exactly 100%. Current sum: ' + total + '%');
+                        return;
+                    }
+                    
+                    const resultsBox = document.getElementById('rebalance-results');
+                    resultsBox.style.display = 'block';
+                    resultsBox.innerHTML = 
+                        [REBALANCING SUGGESTIONS COMPILATION]<br>
+                        --------------------------------------------<br>
+                        Target Allocation: BTC \%, ETH \%, USDC \%, SOL \%<br>
+                        Calculated drift based on net valuation of ,450:<br><br>
+                        - BTC: Current 35.5% | Drift: \% | Action: \ worth of BTC<br>
+                        - ETH: Current 30.4% | Drift: \% | Action: \ worth of ETH<br>
+                        - USDC: Current 19.0%| Drift: \% | Action: \ worth of USDC<br>
+                        - SOL: Current 15.1% | Drift: \% | Action: \ worth of SOL<br>
+                        --------------------------------------------<br>
+                        Execution paths available via Stackly Validator.
+                    ;
+                }
+            </script>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

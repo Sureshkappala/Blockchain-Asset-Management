@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Node Disconnected | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body class="section-dark">
+
+    <div class="error-page-wrapper">
+        <div class="error-visual">
+            <svg viewBox="0 0 200 200" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="cyan-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f0ff" />
+                        <stop offset="100%" stop-color="#8a2be2" />
+                    </linearGradient>
+                </defs>
+                <!-- Broken Blockchain Mesh -->
+                <circle cx="100" cy="50" r="10" fill="url(#cyan-violet)" opacity="0.8" />
+                <circle cx="50" cy="120" r="10" fill="url(#cyan-violet)" opacity="0.8" />
+                <circle cx="150" cy="120" r="10" fill="#0052ff" />
+                
+                <line x1="100" y1="50" x2="50" y2="120" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,6" />
+                <line x1="100" y1="50" x2="150" y2="120" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,6" />
+                <line x1="50" y1="120" x2="150" y2="120" stroke="#0052ff" stroke-width="2" opacity="0.3" />
+
+                <!-- Red Warning Indicator -->
+                <path d="M100,105 L112,126 L88,126 Z" fill="#ef4444" />
+                <circle cx="100" cy="121" r="1.5" fill="#0d1527" />
+                <rect x="99" y="112" width="2" height="6" fill="#0d1527" />
+            </svg>
+        </div>
+
+        <div class="error-number">404</div>
+        <h2 class="error-title">Node Connection Lost</h2>
+        <p class="error-desc">The block or directory index you are requesting is not verified on the Aethera chain network. It may have been relocated or expired.</p>
+
+        <div class="cta-actions">
+            <a href="index.html" class="btn btn-primary">Go to Home</a>
+            <button onclick="history.back()" class="btn btn-secondary">Go Back</button>
+        </div>
+    </div>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

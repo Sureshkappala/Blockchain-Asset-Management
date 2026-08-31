@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body class="section-dark">
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <!-- BACK TO HOME BUTTON -->
+            <a href="index.html" class="back-to-home-btn" style="position: absolute; top: 20px; left: 20px; font-weight: 600; color: var(--accent-cyan); display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Back to Home
+            </a>
+            <div class="auth-header">
+                <a href="index.html" class="logo" style="margin: 0 auto 15px auto; justify-content: center;">
+                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                </a>
+                <h2>Welcome Back</h2>
+                <p>Access your secure blockchain dashboard</p>
+            </div>
+
+            <!-- Form submits to selected dashboard after mock validation -->
+            <form action="user-dashboard.html" method="GET" onsubmit="this.action=document.getElementById('login-role').value;">
+                <div class="form-group">
+                    <label class="form-label" for="login-role">Select Role</label>
+                    <select id="login-role" class="form-input" style="background: var(--bg-dark-secondary); color: #fff; width: 100%; border: 1px solid var(--border-dark); border-radius: 6px; padding: 12px; font-size: 0.9rem;" required>
+                        <option value="user-dashboard.html">Client User Dashboard</option>
+                        <option value="admin-dashboard.html">Network Admin Console (Admin)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input validate-email" placeholder="name@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                        <span class="password-eye">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="auth-options">
+                    <label>
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="404.html">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>New to Aethera? <a href="register.html">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM AUTH MODAL OVERLAY -->
+    <div id="auth-modal" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(6, 11, 25, 0.85); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 3000;">
+        <div style="background: var(--bg-dark-secondary); border: 1.5px solid var(--border-dark); padding: 40px 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: var(--cyan-glow); animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; border: 2px solid var(--status-completed-text);">
+                <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; fill: var(--status-completed-text);"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 25px; color: #fff; font-family: var(--font-heading); font-weight: 600; line-height: 1.5;" id="auth-modal-msg">Credentials Authorized! Redirecting to Stackly Console...</h3>
+            <button id="auth-modal-ok" class="btn btn-cyan" style="width: 100%; padding: 12px; font-weight: 700; border-radius: 6px; box-shadow: none;">OK</button>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes scaleIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+
+    <script src="js/script.js?v=2.6"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Retrieve selected target dashboard role URL
+            const targetUrl = document.getElementById('login-role').value;
+            
+            // Show custom authorization modal
+            const modal = document.getElementById('auth-modal');
+            modal.style.display = "flex";
+            
+            // Handle OK click redirect trigger
+            document.getElementById('auth-modal-ok').addEventListener('click', function() {
+                window.location.href = targetUrl;
+            });
+        });
+    </script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

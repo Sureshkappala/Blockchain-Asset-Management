@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Log | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+            </a>
+            <ul class="nav-links">
+                <li class="mobile-only drawer-header" style="display: none; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px; border-bottom: 1px solid var(--border-dark); padding-bottom: 15px;">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 32px; width: auto;">
+                    </a>
+                    <button class="drawer-close" aria-label="Close Menu" style="color: var(--accent-cyan); font-size: 1.8rem; cursor: pointer; border: none; background: none; line-height: 1;">&times;</button>
+                </li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="transactions.html" class="nav-link active">Transactions</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TRANSACTIONS BANNER -->
+    <section class="section-dark section-padding" style="padding-top: 150px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Activity Ledger</span>
+                <h1 class="section-title">Network Transactions Monitor</h1>
+                <p class="section-desc">Observe live consensus block confirmations, wallet receipts, transaction types, status responses, and transaction history parameters (Demo Prototype Data).</p>
+            </div>
+
+            <!-- Filters Bar -->
+            <div class="tx-filters-bar">
+                <div class="tx-search">
+                    <input type="text" id="tx-search-input" placeholder="Search by Asset name, Tx ID...">
+                </div>
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <div class="tx-select">
+                        <select id="tx-type-filter-select">
+                            <option value="all">All Types</option>
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                            <option value="deposit">Deposit</option>
+                            <option value="withdraw">Withdraw</option>
+                        </select>
+                    </div>
+
+                    <div class="tx-select">
+                        <select id="tx-status-filter-select">
+                            <option value="all">All Statuses</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Container -->
+            <div class="table-container">
+                <table class="tx-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Asset</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Network</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Transaction 1 -->
+                        <tr class="tx-list-row" data-txid="0x7f3a8b2d" data-asset="Bitcoin" data-type="deposit" data-status="completed">
+                            <td style="font-family: monospace;">0x7f3a...8b2d</td>
+                            <td>
+                                <strong>Bitcoin</strong> <span style="font-size:0.75rem; color:var(--text-dark-muted);">BTC</span>
+                            </td>
+                            <td class="tx-type deposit">DEPOSIT</td>
+                            <td style="font-weight:600;">+0.42 BTC</td>
+                            <td>Bitcoin Mainnet</td>
+                            <td>2026-08-28 14:15</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+
+                        <!-- Transaction 2 -->
+                        <tr class="tx-list-row" data-txid="0x9a4f6e1c" data-asset="Ethereum" data-type="buy" data-status="completed">
+                            <td style="font-family: monospace;">0x9a4f...6e1c</td>
+                            <td>
+                                <strong>Ethereum</strong> <span style="font-size:0.75rem; color:var(--text-dark-muted);">ETH</span>
+                            </td>
+                            <td class="tx-type buy">BUY</td>
+                            <td style="font-weight:600;">+3.50 ETH</td>
+                            <td>Ethereum L1</td>
+                            <td>2026-08-28 11:32</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+
+                        <!-- Transaction 3 -->
+                        <tr class="tx-list-row" data-txid="0x3b1c8a7d" data-asset="USD Coin" data-type="withdraw" data-status="pending">
+                            <td style="font-family: monospace;">0x3b1c...8a7d</td>
+                            <td>
+                                <strong>USD Coin</strong> <span style="font-size:0.75rem; color:var(--text-dark-muted);">USDC</span>
+                            </td>
+                            <td class="tx-type withdraw">WITHDRAW</td>
+                            <td style="font-weight:600;">-1,200 USDC</td>
+                            <td>Arbitrum L2</td>
+                            <td>2026-08-28 10:04</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                        </tr>
+
+                        <!-- Transaction 4 -->
+                        <tr class="tx-list-row" data-txid="0x5e2f9d4b" data-asset="Solana" data-type="sell" data-status="failed">
+                            <td style="font-family: monospace;">0x5e2f...9d4b</td>
+                            <td>
+                                <strong>Solana</strong> <span style="font-size:0.75rem; color:var(--text-dark-muted);">SOL</span>
+                            </td>
+                            <td class="tx-type sell">SELL</td>
+                            <td style="font-weight:600;">-15.0 SOL</td>
+                            <td>Solana Network</td>
+                            <td>2026-08-27 16:45</td>
+                            <td><span class="status-badge failed">Failed</span></td>
+                        </tr>
+
+                        <!-- Transaction 5 -->
+                        <tr class="tx-list-row" data-txid="0x8c2b4d9a" data-asset="Tether" data-type="deposit" data-status="completed">
+                            <td style="font-family: monospace;">0x8c2b...4d9a</td>
+                            <td>
+                                <strong>Tether</strong> <span style="font-size:0.75rem; color:var(--text-dark-muted);">USDT</span>
+                            </td>
+                            <td class="tx-type deposit">DEPOSIT</td>
+                            <td style="font-weight:600;">+5,000 USDT</td>
+                            <td>TRON Network</td>
+                            <td>2026-08-27 09:12</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+        <!-- SECTION 3: GAS TRACKER & NETWORK METRICS -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Real-time Metrics</span>
+                <h2 class="section-title">Network Activity & Gas Tracker</h2>
+                <p class="section-desc">Current gas fee parameters and network confirmation congestion scales.</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Ethereum Gas Fee (L1)</h4>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--accent-cyan); margin: 10px 0 5px;">24 Gwei <span style="font-size: 0.85rem; font-weight: 400; color: var(--status-completed-text);">Low Congestion</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Standard execution cost approx .20 | Instant confirmations.</p>
+                </div>
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Bitcoin Satoshis/Byte (L1)</h4>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--accent-cyan); margin: 10px 0 5px;">42 sat/vB <span style="font-size: 0.85rem; font-weight: 400; color: var(--status-pending-text);">Medium Queue</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Estimated confirmation time: 20-30 minutes inside block pool.</p>
+                </div>
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Solana Transaction Fee</h4>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--accent-cyan); margin: 10px 0 5px;">0.00005 SOL <span style="font-size: 0.85rem; font-weight: 400; color: var(--status-completed-text);">&lt; .01 Execution</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Estimated transaction settling speeds: 400ms ledger latency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: MEMPOOL TRANSACTION MONITOR -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark); background: var(--bg-dark-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Mempool Monitor</span>
+                <h2 class="section-title">Pending Mempool Queue</h2>
+                <p class="section-desc">Cryptographic transactions currently broadcasted but waiting block validation.</p>
+            </div>
+            <div class="resource-card" style="padding: 20px; font-family: monospace; background: #070c19; font-size: 0.85rem; line-height: 1.7; border-color: var(--accent-cyan);">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px; margin-bottom: 10px;">
+                    <span style="color: var(--accent-cyan); font-weight: 700;">BROADCAST OBSERVER RUNNING</span>
+                    <span style="color: var(--status-pending-text);">PENDING TRANSACTIONS: 3</span>
+                </div>
+                <div><span style="color: var(--status-pending-text);">[PENDING]</span> Hash: 0x9a3e...b412 | Send 1.25 BTC | Fee: 45 sat/vB | Confirmations: 0/6</div>
+                <div><span style="color: var(--status-pending-text);">[PENDING]</span> Hash: 0xf510...d489 | Send 4.50 ETH | Fee: 28 Gwei | Confirmations: 0/12</div>
+                <div><span style="color: var(--status-pending-text);">[PENDING]</span> Hash: 0xc420...e993 | Stake 85.0 SOL | Fee: 0.00005 SOL | Confirmations: 0/32</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: TAX LEDGER EXPORT -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Tax Compliance</span>
+                <h2 class="section-title">Export Capital Gains Ledger</h2>
+                <p class="section-desc">Generate compliance reports calculating first-in-first-out (FIFO) asset cost basis.</p>
+            </div>
+            <div class="resource-card" style="padding: 30px; max-width: 600px; margin: 0 auto; text-align: center;">
+                <h4 style="margin-bottom: 15px; color: var(--text-dark-main);">Generate Tax Statement (Form 8949 / CSV)</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-dark-muted);">Download a complete tax-reporting transaction history with resolved cost bases and capital gain parameters.</p>
+                <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                    <select style="padding: 12px; border-radius: 6px; border: 1px solid var(--border-dark); background: var(--bg-dark-secondary); color: #fff;">
+                        <option>Tax Year 2026</option>
+                        <option>Tax Year 2025</option>
+                    </select>
+                    <select style="padding: 12px; border-radius: 6px; border: 1px solid var(--border-dark); background: var(--bg-dark-secondary); color: #fff;">
+                        <option>FIFO Method</option>
+                        <option>LIFO Method</option>
+                    </select>
+                </div>
+                <button class="btn btn-cyan" onclick="alert('Tax report compile initiated! Your download will start automatically.')">Export PDF / CSV Statement</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                    </a>
+                    <p style="margin-bottom: 20px; line-height: 1.6;">A comprehensive digital interface for monitoring blockchain nodes, portfolios, network parameters, and security event logs.</p>
+                    <div class="footer-socials" style="display: flex; gap: 15px;">
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.163c-.272-1.016-1.07-1.815-2.085-2.087C19.56 3.53 12 3.53 12 3.53s-7.56 0-9.413.546c-1.015.272-1.813 1.071-2.085 2.087-.545 1.854-.545 5.728-.545 5.728s0 3.874.545 5.728c.272 1.015 1.07 1.813 2.085 2.085C4.44 20.47 12 20.47 12 20.47s7.56 0 9.413-.545c1.015-.272 1.813-1.07 2.085-2.085.545-1.854.545-5.728.545-5.728s0-3.874-.545-5.728zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Quick Links</h4>
+                    <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Aethera</a></li>
+                        <li><a href="portfolio.html">Active Portfolios</a></li>
+                        <li><a href="transactions.html">Transaction Log</a></li>
+                        <li><a href="register.html">Get Started</a></li>
+                        <li><a href="contact.html">Contact Hub</a></li>
+                        <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Support</h4>
+                    <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
+                        <li><a href="contact.html">Contact Coordinates</a></li>
+                        <li><a href="404.html">Terms &amp; Agreements</a></li>
+                        <li><a href="security.html">Security Audits</a></li>
+                        <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Newsletter</h4>
+                    <p style="margin-bottom: 20px; font-size: 0.88rem; line-height: 1.5;">Get quarterly cryptographic updates, security audit reports, and platform validation news.</p>
+                    <form class="mock-submission" style="display: flex; gap: 8px;">
+                        <input type="email" placeholder="Your Email" required style="flex-grow: 1; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.88rem;">
+                        <button type="submit" class="btn btn-cyan" style="padding: 10px 20px; border-radius: 6px; font-size: 0.88rem; box-shadow: none;">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom" style="border-top: 1px solid var(--border-dark); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 40px;">
+                <p>&copy; 2026 Stackly Protocol. All rights reserved. Designed for blockchain verification.</p>
+                <div class="footer-legal-links" style="display: flex; gap: 20px;">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="security.html">Security Audits</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

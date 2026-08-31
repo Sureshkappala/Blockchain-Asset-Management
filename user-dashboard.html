@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Dashboard | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body class="section-dark">
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <a href="user-dashboard.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                </a>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="user-dashboard.html" class="sidebar-item active">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span>Overview</span>
+                </a>
+                
+                <a href="user-portfolio.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                    <span>My Portfolio</span>
+                </a>
+                <a href="user-transactions.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>
+                    <span>Transactions</span>
+                </a>
+                <a href="user-security.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    <span>Security Center</span>
+                </a>
+                <a href="user-resources.html" class="sidebar-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <span>FAQ &amp; Guides</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="sidebar-item" style="color: var(--status-failed-text);">
+                    <svg viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4h-2v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="db-header-left">
+                    <span class="db-hamburger">&#9776;</span>
+                    <h2 class="db-title">Investor Overview</h2>
+                </div>
+
+                <div class="db-header-right">
+                    <!-- Notifications -->
+                    <div class="db-bell" onclick="alert('Demo: System health reports verified. No anomalies detected.')">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                        <span class="db-bell-dot"></span>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="db-profile" onclick="location.href='admin-dashboard.html'">
+                        <div class="profile-avatar">ID</div>
+                        <div class="profile-info">
+                            <h4>Investor Demo</h4>
+                            <span>Access: Member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Status Grid Widgets -->
+                <div class="db-stats-grid">
+                    <!-- Total -->
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Portfolio Value</span>
+                        <div class="widget-val counter-val" data-target="131450" data-decimal="false" data-prefix="$">$0</div>
+                        <span class="widget-perf up">▲ +10.4% total</span>
+                    </div>
+                    <!-- Digital -->
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Native Assets</span>
+                        <div class="widget-val counter-val" data-target="106450" data-decimal="false" data-prefix="$">$0</div>
+                        <span class="widget-perf up">▲ +12.3%</span>
+                    </div>
+                    <!-- Stable -->
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Stable Assets</span>
+                        <div class="widget-val counter-val" data-target="25000" data-decimal="false" data-prefix="$">$0</div>
+                        <span class="widget-perf up">▲ +0.01%</span>
+                    </div>
+                    <!-- Pending -->
+                    <div class="db-stat-widget">
+                        <span class="widget-lbl">Pending Tx</span>
+                        <div class="widget-val">1</div>
+                        <span class="widget-perf down" style="color:var(--status-pending-text);">● In validation pool</span>
+                    </div>
+                </div>
+
+                <!-- Graphs & Distributions Row -->
+                <div class="db-grid-row">
+                    <!-- History Chart -->
+                    <div class="db-card">
+                        <div class="db-card-header">
+                            <h3 class="db-card-title">Valuation History</h3>
+                            <div class="chart-tabs">
+                                <button class="chart-tab-btn active" data-period="1W">1W</button>
+                                <button class="chart-tab-btn" data-period="1M">1M</button>
+                                <button class="chart-tab-btn" data-period="ALL">All</button>
+                            </div>
+                        </div>
+
+                        <div class="svg-chart-wrapper">
+                            <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+                                <path class="svg-area-path" fill="url(#db-area-grad)" d="" />
+                                <path class="svg-line-path" stroke="var(--accent-cyan)" stroke-width="3.5" fill="none" d="" />
+                                <defs>
+                                    <linearGradient id="db-area-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="var(--accent-cyan)" stop-opacity="0.18" />
+                                        <stop offset="100%" stop-color="var(--accent-cyan)" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <g class="chart-points-container"></g>
+                            </svg>
+                            <div class="chart-tooltip" id="chart-tooltip"></div>
+                        </div>
+                    </div>
+
+                    <!-- Allocation Donut -->
+                    <div class="db-card" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                        <h3 class="db-card-title" style="align-self:flex-start; margin-bottom: 20px;">Asset Mix</h3>
+                        
+                        <div class="chart-visual-wrapper" style="padding:0;">
+                            <svg width="180" height="180" viewBox="0 0 120 120" class="donut-svg">
+                                <circle cx="60" cy="60" r="45" class="donut-ring" />
+                                <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="35.5" stroke="var(--accent-cyan)" />
+                                <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="30.4" stroke="var(--accent-blue)" />
+                                <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="19.0" stroke="var(--accent-violet)" />
+                                <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="15.1" stroke="#f59e0b" />
+                            </svg>
+                            <div class="donut-label-center">
+                                <h3 style="font-size:1.4rem;">4 Assets</h3>
+                            </div>
+                        </div>
+
+                        <div style="width:100%; display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; font-size:0.78rem;">
+                            <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent-cyan); margin-right:4px;"></span>BTC (35.5%)</div>
+                            <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent-blue); margin-right:4px;"></span>ETH (30.4%)</div>
+                            <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent-violet); margin-right:4px;"></span>USDC (19.0%)</div>
+                            <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#f59e0b; margin-right:4px;"></span>SOL (15.1%)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watchlist & Transactions Row -->
+                <div class="db-grid-row watchlist-row">
+                    <!-- Watchlist -->
+                    <div class="db-card">
+                        <h3 class="db-card-title" style="margin-bottom: 20px;">Asset Watchlist</h3>
+                        <div class="p-holdings-list">
+                            <div class="p-holding-row" style="border-bottom:1px solid var(--border-dark); padding:10px 0;">
+                                <span>Chainlink (LINK)</span>
+                                <span style="font-weight:600;">$15.50 <span style="color:var(--status-completed-text); font-size:0.75rem; margin-left:4px;">+0.8%</span></span>
+                            </div>
+                            <div class="p-holding-row" style="border-bottom:1px solid var(--border-dark); padding:10px 0;">
+                                <span>Polygon (POL)</span>
+                                <span style="font-weight:600;">$0.45 <span style="color:var(--status-failed-text); font-size:0.75rem; margin-left:4px;">-2.4%</span></span>
+                            </div>
+                            <div class="p-holding-row" style="padding:10px 0;">
+                                <span>Cardano (ADA)</span>
+                                <span style="font-weight:600;">$0.38 <span style="color:var(--status-completed-text); font-size:0.75rem; margin-left:4px;">+1.2%</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transactions Widget -->
+                    <div class="db-card">
+                        <div class="db-card-header">
+                            <h3 class="db-card-title">Recent Transactions</h3>
+                            <a href="transactions.html" style="font-size:0.8rem; color:var(--accent-cyan); font-weight:600;">See All</a>
+                        </div>
+                        
+                        <div class="table-container" style="border:none;">
+                            <table class="tx-table" style="min-width: 450px;">
+                                <thead>
+                                    <tr>
+                                        <th>Asset</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="tx-list-row" data-txid="0x7f3a8b2d" data-asset="Bitcoin" data-type="deposit" data-status="completed">
+                                        <td>BTC</td>
+                                        <td>+0.42 BTC</td>
+                                        <td>14:15</td>
+                                        <td><span class="status-badge completed" style="padding: 2px 6px; font-size:0.7rem;">Success</span></td>
+                                    </tr>
+                                    <tr class="tx-list-row" data-txid="0x9a4f6e1c" data-asset="Ethereum" data-type="buy" data-status="completed">
+                                        <td>ETH</td>
+                                        <td>+3.50 ETH</td>
+                                        <td>11:32</td>
+                                        <td><span class="status-badge completed" style="padding: 2px 6px; font-size:0.7rem;">Success</span></td>
+                                    </tr>
+                                    <tr class="tx-list-row" data-txid="0x3b1c8a7d" data-asset="USD Coin" data-type="withdraw" data-status="pending">
+                                        <td>USDC</td>
+                                        <td>-1,200 USDC</td>
+                                        <td>10:04</td>
+                                        <td><span class="status-badge pending" style="padding: 2px 6px; font-size:0.7rem;">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>

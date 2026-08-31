@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Manager | Stackly Asset Management</title>
+    <link rel="stylesheet" href="css/style.css?v=2.6">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+            </a>
+            <ul class="nav-links">
+                <li class="mobile-only drawer-header" style="display: none; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 20px; border-bottom: 1px solid var(--border-dark); padding-bottom: 15px;">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 32px; width: auto;">
+                    </a>
+                    <button class="drawer-close" aria-label="Close Menu" style="color: var(--accent-cyan); font-size: 1.8rem; cursor: pointer; border: none; background: none; line-height: 1;">&times;</button>
+                </li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="transactions.html" class="nav-link">Transactions</a></li>
+                <li><a href="security.html" class="nav-link">Security</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="section-dark section-padding" style="padding-top: 150px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Asset Distribution</span>
+                <h1 class="section-title">Investment Portfolio Hub</h1>
+                <p class="section-desc">Track real-time digital allocations, assets holdings distributions, historical net growth patterns, and execution logs (Demo Prototype Data).</p>
+            </div>
+
+            <div class="portfolio-layout" style="margin-bottom: 50px;">
+                <!-- Left stats & holdings -->
+                <div class="portfolio-overview-card">
+                    <span class="p-total-lbl">Consolidated Portfolio Net Worth</span>
+                    <div class="p-total-val counter-val" data-target="131450" data-decimal="false" data-prefix="$">$0</div>
+
+                    <div class="p-details-grid">
+                        <div class="p-detail-item">
+                            <span>Unrealized PnL</span>
+                            <h4 style="color:var(--status-completed-text);">+$12,480 (10.4%)</h4>
+                        </div>
+                        <div class="p-detail-item">
+                            <span>Allocated Assets</span>
+                            <h4>4 Holdings</h4>
+                        </div>
+                        <div class="p-detail-item">
+                            <span>Secured Wallets</span>
+                            <h4>3 Wallets</h4>
+                        </div>
+                    </div>
+
+                    <div class="p-holdings-list">
+                        <!-- Holding 1 -->
+                        <div class="p-holding-row" style="border-bottom: 1px solid var(--border-dark); padding-bottom: 12px;">
+                            <div class="p-holding-info">
+                                <span class="p-holding-dot" style="background-color: var(--accent-cyan);"></span>
+                                <div>
+                                    <h4 style="font-size:1.05rem;">Bitcoin (BTC)</h4>
+                                    <p style="font-size:0.8rem; color:var(--text-dark-muted);">0.85 BTC • $55,000 / unit</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="font-size:1.05rem;">$46,750</h4>
+                                <p style="font-size:0.8rem; color:var(--accent-cyan);">35.5% Allocation</p>
+                            </div>
+                        </div>
+
+                        <!-- Holding 2 -->
+                        <div class="p-holding-row" style="border-bottom: 1px solid var(--border-dark); padding-bottom: 12px;">
+                            <div class="p-holding-info">
+                                <span class="p-holding-dot" style="background-color: var(--accent-blue);"></span>
+                                <div>
+                                    <h4 style="font-size:1.05rem;">Ethereum (ETH)</h4>
+                                    <p style="font-size:0.8rem; color:var(--text-dark-muted);">12.5 ETH • $3,200 / unit</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="font-size:1.05rem;">$40,000</h4>
+                                <p style="font-size:0.8rem; color:var(--accent-blue);">30.4% Allocation</p>
+                            </div>
+                        </div>
+
+                        <!-- Holding 3 -->
+                        <div class="p-holding-row" style="border-bottom: 1px solid var(--border-dark); padding-bottom: 12px;">
+                            <div class="p-holding-info">
+                                <span class="p-holding-dot" style="background-color: var(--accent-violet);"></span>
+                                <div>
+                                    <h4 style="font-size:1.05rem;">USD Coin (USDC)</h4>
+                                    <p style="font-size:0.8rem; color:var(--text-dark-muted);">25,000 USDC • $1.00 / unit</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="font-size:1.05rem;">$25,000</h4>
+                                <p style="font-size:0.8rem; color:var(--accent-violet);">19.0% Allocation</p>
+                            </div>
+                        </div>
+
+                        <!-- Holding 4 -->
+                        <div class="p-holding-row">
+                            <div class="p-holding-info">
+                                <span class="p-holding-dot" style="background-color: #f59e0b;"></span>
+                                <div>
+                                    <h4 style="font-size:1.05rem;">Solana (SOL)</h4>
+                                    <p style="font-size:0.8rem; color:var(--text-dark-muted);">138.8 SOL • $142 / unit</p>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <h4 style="font-size:1.05rem;">$19,700</h4>
+                                <p style="font-size:0.8rem; color: #f59e0b;">15.1% Allocation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right visual charts -->
+                <div class="chart-visual-wrapper">
+                    <!-- SVG Donut Chart -->
+                    <svg width="250" height="250" viewBox="0 0 120 120" class="donut-svg">
+                        <circle cx="60" cy="60" r="45" class="donut-ring" />
+                        
+                        <!-- Segments (stroke-dasharray represents arc percentage) -->
+                        <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="35.5" stroke="var(--accent-cyan)" />
+                        <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="30.4" stroke="var(--accent-blue)" />
+                        <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="19.0" stroke="var(--accent-violet)" />
+                        <circle cx="60" cy="60" r="45" class="donut-segment" data-percent="15.1" stroke="#f59e0b" />
+                    </svg>
+                    
+                    <div class="donut-label-center">
+                        <h3>100%</h3>
+                        <p>Allocated</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historical Performance Section -->
+            <div class="analytics-chart-container">
+                <div class="chart-header">
+                    <div>
+                        <h3 style="font-size:1.2rem; margin-bottom:4px;">Portfolio Valuation History</h3>
+                        <p style="font-size:0.8rem; color:var(--text-dark-muted);">Growth patterns over set timeframe metrics</p>
+                    </div>
+
+                    <div class="chart-tabs">
+                        <button class="chart-tab-btn active" data-period="1W">1 Week</button>
+                        <button class="chart-tab-btn" data-period="1M">1 Month</button>
+                        <button class="chart-tab-btn" data-period="ALL">All Time</button>
+                    </div>
+                </div>
+
+                <div class="svg-chart-wrapper">
+                    <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+                        <!-- Chart Gridlines -->
+                        <line x1="50" y1="50" x2="950" y2="50" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <line x1="50" y1="125" x2="950" y2="125" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <line x1="50" y1="200" x2="950" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                        <line x1="50" y1="275" x2="950" y2="275" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
+
+                        <!-- Dynamic Paths (Bound in JS) -->
+                        <path class="svg-area-path" fill="url(#chart-area-grad)" d="" />
+                        <path class="svg-line-path" stroke="var(--accent-cyan)" stroke-width="3.5" fill="none" stroke-linecap="round" d="" />
+
+                        <!-- Gradients definition -->
+                        <defs>
+                            <linearGradient id="chart-area-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--accent-cyan)" stop-opacity="0.18" />
+                                <stop offset="100%" stop-color="var(--accent-cyan)" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Points hover placeholders (drawn by JS script) -->
+                        <g class="chart-points-container"></g>
+                    </svg>
+
+                    <!-- Tooltip indicator -->
+                    <div class="chart-tooltip" id="chart-tooltip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- SECTION 5: PORTFOLIO RISK ANALYTICS -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Risk Management</span>
+                <h2 class="section-title">Ecosystem Risk Analytics</h2>
+                <p class="section-desc">Real-time valuation metrics checking asset volatility and exposure limits.</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Beta Score (Volatility vs Market)</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">1.18 <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-dark-muted);">Moderate Risk</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Indicates that your portfolio is slightly more volatile than the baseline index model.</p>
+                </div>
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Sharpe Ratio (Risk-Adjusted Return)</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">2.41 <span style="font-size: 0.9rem; font-weight: 400; color: var(--status-completed-text);">Excellent</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">Higher Sharpe values indicate robust risk-adjusted return indices over a 30-day window.</p>
+                </div>
+                <div class="resource-card" style="padding: 24px;">
+                    <h4 style="color: var(--text-dark-main);">Max Historical Drawdown</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">-18.4% <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-dark-muted);">90d Period</span></p>
+                    <p style="font-size: 0.85rem; color: var(--text-dark-muted);">The peak-to-trough decline of your assets during the last market contraction index.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: YIELD STAKING APY -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark); background: var(--bg-dark-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Yield Optimization</span>
+                <h2 class="section-title">Consensus Staking Yields</h2>
+                <p class="section-desc">Active staking pools with verified validator nodes for yield generation.</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card" style="padding: 24px; text-align: center;">
+                    <h4 style="color: var(--text-dark-main);">Ethereum Staking (ETH)</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">4.25% <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-dark-muted);">APY</span></p>
+                    <p style="font-size: 0.85rem; margin-bottom: 20px; color: var(--text-dark-muted);">Estimated reward cycle: 1 epoch (6.4 min) | Low risk validator.</p>
+                    <a href="register.html" class="btn btn-cyan btn-sm" style="width: 100%;">Stake Assets</a>
+                </div>
+                <div class="resource-card" style="padding: 24px; text-align: center;">
+                    <h4 style="color: var(--text-dark-main);">Solana Staking (SOL)</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">6.48% <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-dark-muted);">APY</span></p>
+                    <p style="font-size: 0.85rem; margin-bottom: 20px; color: var(--text-dark-muted);">Settles in epoches (approx 2 days lockup) | Highly optimized.</p>
+                    <a href="register.html" class="btn btn-cyan btn-sm" style="width: 100%;">Stake Assets</a>
+                </div>
+                <div class="resource-card" style="padding: 24px; text-align: center;">
+                    <h4 style="color: var(--text-dark-main);">USD Stable Yield (USDC)</h4>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan); margin: 15px 0 10px;">5.12% <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-dark-muted);">APY</span></p>
+                    <p style="font-size: 0.85rem; margin-bottom: 20px; color: var(--text-dark-muted);">Collateralized liquidity lending pool | Immediate withdrawal.</p>
+                    <a href="register.html" class="btn btn-cyan btn-sm" style="width: 100%;">Lend Assets</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: HISTORICAL PERFORMANCE COMPARISON -->
+    <section class="section-dark section-padding" style="border-top: 1px solid var(--border-dark);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Performance</span>
+                <h2 class="section-title">Historical Performance Benchmarks</h2>
+                <p class="section-desc">Comparing your net valuation return index against standard crypto and stock markets.</p>
+            </div>
+            <div class="portfolio-layout" style="align-items: center; gap: 40px;">
+                <div style="border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-dark); box-shadow: var(--blue-glow); display: flex; width: 100%;">
+                    <img src="assets/images/portfolio_tactical.jpg" alt="Performance charts tactical comparison" style="width: 100%; height: auto; object-fit: cover;" loading="lazy">
+                </div>
+                <div class="resource-card" style="padding: 24px; overflow-x: auto; margin: 0; width: 100%;">
+                    <table style="width: 100%; border-collapse: collapse; min-width: 400px; font-size: 0.9rem; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-dark); color: var(--accent-cyan);">
+                                <th style="padding: 12px 10px;">Benchmark Asset</th>
+                                <th style="padding: 12px 10px;">1M Return</th>
+                                <th style="padding: 12px 10px;">6M Return</th>
+                                <th style="padding: 12px 10px;">1Y Return</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-dark);">
+                                <td style="padding: 12px 10px; font-weight: 600; color: var(--text-dark-main);">Your Stackly Portfolio</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+8.42%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+24.15%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+62.40%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-dark);">
+                                <td style="padding: 12px 10px; color: var(--text-dark-muted);">Bitcoin Index (BTC)</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+5.10%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+18.30%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+48.15%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-dark);">
+                                <td style="padding: 12px 10px; color: var(--text-dark-muted);">Ethereum Index (ETH)</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+6.24%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+15.42%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+38.90%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px 10px; color: var(--text-dark-muted);">S&amp;P 500 Index</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+1.20%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+6.80%</td>
+                                <td style="padding: 12px 10px; color: var(--status-completed-text);">+12.45%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
+                        <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                    </a>
+                    <p style="margin-bottom: 20px; line-height: 1.6;">A comprehensive digital interface for monitoring blockchain nodes, portfolios, network parameters, and security event logs.</p>
+                    <div class="footer-socials" style="display: flex; gap: 15px;">
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="404.html" class="social-icon" style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.05); display:inline-flex; align-items:center; justify-content:center; color:#fff;" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.163c-.272-1.016-1.07-1.815-2.085-2.087C19.56 3.53 12 3.53 12 3.53s-7.56 0-9.413.546c-1.015.272-1.813 1.071-2.085 2.087-.545 1.854-.545 5.728-.545 5.728s0 3.874.545 5.728c.272 1.015 1.07 1.813 2.085 2.085C4.44 20.47 12 20.47 12 20.47s7.56 0 9.413-.545c1.015-.272 1.813-1.07 2.085-2.085.545-1.854.545-5.728.545-5.728s0-3.874-.545-5.728zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Quick Links</h4>
+                    <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Aethera</a></li>
+                        <li><a href="portfolio.html">Active Portfolios</a></li>
+                        <li><a href="transactions.html">Transaction Log</a></li>
+                        <li><a href="register.html">Get Started</a></li>
+                        <li><a href="contact.html">Contact Hub</a></li>
+                        <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Support</h4>
+                    <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
+                        <li><a href="contact.html">Contact Coordinates</a></li>
+                        <li><a href="404.html">Terms &amp; Agreements</a></li>
+                        <li><a href="security.html">Security Audits</a></li>
+                        <li class="mobile-only drawer-actions" style="display: none; width: 100%; flex-direction: column; gap: 10px; margin-top: 25px;">
+                    <a href="login.html" class="btn btn-secondary" style="width: 100%; text-align: center;">Login</a>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </li>
+                <li class="mobile-only drawer-search" style="display: none; width: 100%; margin-top: 20px;">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search resources..." style="width: 100%; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #fff; font-size: 0.88rem;" onkeyup="if(event.key === 'Enter') { location.href='resources.html?search=' + encodeURIComponent(this.value); }">
+                    </div>
+                </li>
+                <li class="mobile-only drawer-contact-info" style="display: none; width: 100%; margin-top: 30px; font-size: 0.85rem; color: var(--text-dark-muted); flex-direction: column; gap: 10px; border-top: 1px solid var(--border-dark); padding-top: 20px;">
+                    <h5 style="color: var(--text-dark-main); font-size: 0.9rem; margin-bottom: 5px;">Contact Info</h5>
+                    <p style="margin: 3px 0;">Phone: +1 (800) 555-SAFE</p>
+                    <p style="margin: 3px 0;">Email: support@stackly.org</p>
+                    <p style="margin: 3px 0; line-height: 1.4;">Location: Salem, Tamil Nadu, India</p>
+                </li>
+            </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Newsletter</h4>
+                    <p style="margin-bottom: 20px; font-size: 0.88rem; line-height: 1.5;">Get quarterly cryptographic updates, security audit reports, and platform validation news.</p>
+                    <form class="mock-submission" style="display: flex; gap: 8px;">
+                        <input type="email" placeholder="Your Email" required style="flex-grow: 1; padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.88rem;">
+                        <button type="submit" class="btn btn-cyan" style="padding: 10px 20px; border-radius: 6px; font-size: 0.88rem; box-shadow: none;">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom" style="border-top: 1px solid var(--border-dark); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 40px;">
+                <p>&copy; 2026 Stackly Protocol. All rights reserved. Designed for blockchain verification.</p>
+                <div class="footer-legal-links" style="display: flex; gap: 20px;">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="security.html">Security Audits</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=2.6"></script>
+    <div class="drawer-overlay"></div>
+</body>
+</html>
