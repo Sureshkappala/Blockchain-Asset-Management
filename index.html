@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aethera | Blockchain Asset Management Platform</title>
-    <link rel="stylesheet" href="css/style.css?v=3.2">
+    <link rel="stylesheet" href="css/style.css?v=3.5">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
                     </a>
                     <button class="drawer-close" aria-label="Close Menu" style="color: var(--accent-cyan); font-size: 1.8rem; cursor: pointer; border: none; background: none; line-height: 1;">&times;</button>
                 </li>
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link" active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 
                 <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
@@ -68,7 +68,6 @@
                 <div class="hero-actions">
                     <a href="register.html" class="btn btn-primary">Get Started</a>
                     <a href="portfolio.html" class="btn btn-cyan">Explore Portfolio</a>
-                    <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
                 </div>
 
                 <div class="hero-stats">
@@ -88,7 +87,34 @@
             </div>
 
             <div class="hero-visual">
-                <img src="assets/images/dashboard_premium.webp" alt="Stackly Asset Management Platform Dashboard UI mockup" style="border-radius: var(--border-radius); border: 1px solid var(--border-dark); box-shadow: var(--cyan-glow); max-width: 100%; height: auto; animation: float 6s ease-in-out infinite;">
+                <div class="hero-mockup-wrapper">
+                    <!-- Floating Badge 1 (Top-Left) -->
+                    <div class="hero-floating-badge-1">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--accent-cyan)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2v-2zm0-10h2v8h-2V6z"/></svg>
+                        <span>BTC <strong style="color:var(--status-completed-text);">+4.2%</strong> $68,420</span>
+                    </div>
+
+                    <!-- Floating Badge 2 (Bottom-Right) -->
+                    <div class="hero-floating-badge-2">
+                        <span class="pulse-dot"></span>
+                        <span>12,480 Tx/s <strong style="color:var(--accent-cyan); font-weight:600;">L1 Sync</strong></span>
+                    </div>
+
+                    <div class="hero-mockup-inner">
+                        <div style="background: rgba(13, 21, 39, 0.95); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0, 240, 255, 0.15);">
+                            <div style="display: flex; gap: 7px;">
+                                <span style="width: 11px; height: 11px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                                <span style="width: 11px; height: 11px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                                <span style="width: 11px; height: 11px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: var(--accent-cyan); font-family: monospace; letter-spacing: 0.06em;">console.stackly.org/live-node</span>
+                            <span style="font-size: 0.78rem; color: var(--status-completed-text); font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                                <span class="pulse-dot" style="width:6px; height:6px;"></span> Live
+                            </span>
+                        </div>
+                        <img src="assets/images/dashboard_premium.webp" alt="Stackly Asset Management Platform Dashboard UI mockup" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -594,7 +620,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -620,30 +646,27 @@
                 </div>
 
                 <div>
-                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Quick Links</h4>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Navigation</h4>
                     <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Aethera</a></li>
-                        <li><a href="portfolio.html">Active Portfolios</a></li>
-                        <li><a href="transactions.html">Transaction Log</a></li>
-                        <li><a href="register.html">Get Started</a></li>
-                        <li><a href="contact.html">Contact Hub</a></li>
-                        
-                
-                
-            </ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="transactions.html">Transactions</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Support</h4>
+                    <h4 class="footer-col-title" style="position: relative; padding-bottom: 6px; border-bottom: 2px solid var(--accent-cyan); display: inline-block; margin-bottom: 25px; color:#fff; font-weight:600; font-size:0.95rem;">Access &amp; Legal</h4>
                     <ul class="footer-links" style="display:flex; flex-direction:column; gap:12px;">
-                        <li><a href="contact.html">Contact Coordinates</a></li>
-                        <li><a href="404.html">Terms &amp; Agreements</a></li>
-                        <li><a href="security.html">Security Audits</a></li>
-                        
-                
-                
-            </ul>
+                        <li><a href="login.html">Investor Login</a></li>
+                        <li><a href="register.html">Create Account</a></li>
+                        <li><a href="user-dashboard.html">User Console</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms of Service</a></li>
+                    </ul>
                 </div>
 
                 <div>
@@ -658,16 +681,20 @@
 
             <div class="footer-bottom" style="border-top: 1px solid var(--border-dark); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 40px;">
                 <p>&copy; 2026 Stackly Protocol. All rights reserved. Designed for blockchain verification.</p>
-                <div class="footer-legal-links" style="display: flex; gap: 20px;">
-                    <a href="404.html">Privacy Policy</a>
-                    <a href="404.html">Terms of Service</a>
-                    <a href="security.html">Security Audits</a>
+                <div class="footer-legal-links" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="transactions.html">Transactions</a>
+                    <a href="security.html">Security</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js?v=3.2"></script>
+    <script src="js/script.js?v=3.5"></script>
     <div class="drawer-overlay"></div>
 </body>
 </html>

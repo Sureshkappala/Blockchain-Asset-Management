@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALIZE ALL COMPONENTS ---
     initStickyNavbar();
+    initActiveNav();
     initMobileNav();
     initFAQAccordion();
     initCounters();
@@ -19,6 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ==========================================================================
    1. NAVIGATION & STICKY HEADER
    ========================================================================== */
+function initActiveNav() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    if (!navLinks.length) return;
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+    });
+}
 function initStickyNavbar() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
@@ -613,17 +627,27 @@ function initListFilters() {
    8. USER CREDENTIALS & SESSION SYNC
    ========================================================================== */
 function initUserCredentials() {
-    const savedName = localStorage.getItem('user_full_name');
-    const savedEmail = localStorage.getItem('user_login_email');
-    const savedRole = localStorage.getItem('user_selected_role');
+    const savedName = localStorage.getItem('user_full_name') || 'Investor';
+    const savedEmail = localStorage.getItem('user_login_email') || 'investor@stackly.org';
+    const savedRole = localStorage.getItem('user_selected_role') || 'Investor Client';
 
+    // Derive 2-letter uppercase initials
+    let initials = 'IV';
     if (savedName) {
-        document.querySelectorAll('.user-display-name').forEach(el => el.innerText = savedName);
+        const parts = savedName.trim().split(/\s+/);
+        if (parts.length > 1) {
+            initials = (parts[0][0] + parts[1][0]).toUpperCase();
+        } else if (parts[0].length >= 2) {
+            initials = parts[0].substring(0, 2).toUpperCase();
+        } else if (parts[0].length === 1) {
+            initials = parts[0].toUpperCase();
+        }
     }
-    if (savedEmail) {
-        document.querySelectorAll('.user-display-email').forEach(el => el.innerText = savedEmail);
-    }
-    if (savedRole) {
-        document.querySelectorAll('.user-display-role').forEach(el => el.innerText = savedRole);
-    }
+
+    document.querySelectorAll('.user-display-name').forEach(el => el.innerText = savedName);
+    document.querySelectorAll('.user-display-email').forEach(el => el.innerText = savedEmail);
+    document.querySelectorAll('.user-display-role').forEach(el => el.innerText = savedRole);
+    document.querySelectorAll('.profile-avatar').forEach(el => el.innerText = initials);
+    document.querySelectorAll('.profile-info h4').forEach(el => el.innerText = savedName);
+    document.querySelectorAll('.profile-info span').forEach(el => el.innerText = savedEmail);
 }
