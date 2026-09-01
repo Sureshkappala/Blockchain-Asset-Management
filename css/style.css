@@ -136,6 +136,48 @@ ul {
     color: var(--text-light-muted);
 }
 
+/* --- SECTION OUTLINE & HOVER HIGHLIGHTING --- */
+section, header.hero {
+    position: relative;
+    border-top: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border-dark);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
+}
+
+section:hover, header.hero:hover {
+    border-top-color: rgba(0, 240, 255, 0.45);
+    border-bottom-color: rgba(0, 240, 255, 0.45);
+    box-shadow: inset 0 0 50px rgba(0, 240, 255, 0.025);
+}
+
+.section-light {
+    border-top-color: rgba(0, 82, 255, 0.15);
+    border-bottom-color: rgba(0, 82, 255, 0.15);
+}
+
+.section-light:hover {
+    border-top-color: rgba(0, 82, 255, 0.4);
+    border-bottom-color: rgba(0, 82, 255, 0.4);
+    box-shadow: inset 0 0 50px rgba(0, 82, 255, 0.02);
+}
+
+/* Card Outerline Highlight and Hover Effects */
+.resource-card, .asset-card, .security-card, .db-card, .stat-card, 
+.portfolio-overview-card, .timeline-content, .faq-item, .contact-form-card, 
+.analytics-chart-container, .db-stat-widget, .auth-card {
+    border: 1px solid var(--border-dark);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resource-card:hover, .asset-card:hover, .security-card:hover, .db-card:hover, 
+.stat-card:hover, .portfolio-overview-card:hover, .timeline-content:hover, 
+.faq-item:hover, .contact-form-card:hover, .analytics-chart-container:hover,
+.db-stat-widget:hover, .auth-card:hover {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.18) !important;
+    transform: translateY(-4px);
+}
+
 /* Section Header layouts */
 .section-header {
     text-align: center;

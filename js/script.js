@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initDashboardDrawer();
     initListFilters();
+    initUserCredentials();
 });
 
 /* ==========================================================================
@@ -605,5 +606,24 @@ function initListFilters() {
         if (txSearch) txSearch.addEventListener('input', filterTx);
         if (txTypeFilter) txTypeFilter.addEventListener('change', filterTx);
         if (txStatusFilter) txStatusFilter.addEventListener('change', filterTx);
+    }
+}
+
+/* ==========================================================================
+   8. USER CREDENTIALS & SESSION SYNC
+   ========================================================================== */
+function initUserCredentials() {
+    const savedName = localStorage.getItem('user_full_name');
+    const savedEmail = localStorage.getItem('user_login_email');
+    const savedRole = localStorage.getItem('user_selected_role');
+
+    if (savedName) {
+        document.querySelectorAll('.user-display-name').forEach(el => el.innerText = savedName);
+    }
+    if (savedEmail) {
+        document.querySelectorAll('.user-display-email').forEach(el => el.innerText = savedEmail);
+    }
+    if (savedRole) {
+        document.querySelectorAll('.user-display-role').forEach(el => el.innerText = savedRole);
     }
 }

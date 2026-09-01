@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Stackly Asset Management</title>
-    <link rel="stylesheet" href="css/style.css?v=2.6">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 <body class="section-dark">
 
@@ -16,7 +16,7 @@
             </a>
             <div class="auth-header">
                 <a href="index.html" class="logo" style="margin: 0 auto 15px auto; justify-content: center;">
-                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                    <img src="assets/images/logo.webp" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
                 </a>
                 <h2>Create Account</h2>
                 <p>Register to monitor digital assets</p>
@@ -107,13 +107,27 @@
         }
     </style>
 
-    <script src="js/script.js?v=2.6"></script>
+    <script src="js/script.js?v=3.0"></script>
     <script>
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Retrieve selected target dashboard role URL
-            const targetUrl = document.getElementById('reg-role').value;
+            // Retrieve inputs and selected target dashboard role URL
+            const nameInput = document.getElementById('reg-name');
+            const emailInput = document.getElementById('reg-email');
+            const roleSelect = document.getElementById('reg-role');
+            const targetUrl = roleSelect ? roleSelect.value : 'user-dashboard.html';
+
+            if (nameInput && nameInput.value) {
+                localStorage.setItem('user_full_name', nameInput.value);
+            }
+            if (emailInput && emailInput.value) {
+                localStorage.setItem('user_login_email', emailInput.value);
+            }
+            if (roleSelect) {
+                const roleText = roleSelect.options[roleSelect.selectedIndex].text;
+                localStorage.setItem('user_selected_role', roleText);
+            }
             
             // Show custom registration modal
             const modal = document.getElementById('auth-modal');

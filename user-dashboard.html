@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investor Dashboard | Stackly Asset Management</title>
-    <link rel="stylesheet" href="css/style.css?v=2.6">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 <body class="section-dark">
 
@@ -13,7 +13,7 @@
         <aside class="dashboard-sidebar">
             <div class="sidebar-logo">
                 <a href="user-dashboard.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
+                    <img src="assets/images/logo.webp" alt="Stackly Logo" style="height: 42px; width: auto; display: block;">
                 </a>
             </div>
             
@@ -59,17 +59,17 @@
 
                 <div class="db-header-right">
                     <!-- Notifications -->
-                    <div class="db-bell" onclick="alert('Demo: System health reports verified. No anomalies detected.')">
+                    <div class="db-bell" onclick="location.href=\'404.html\'">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
                         <span class="db-bell-dot"></span>
                     </div>
 
                     <!-- Profile -->
                     <div class="db-profile" onclick="location.href='admin-dashboard.html'">
-                        <div class="profile-avatar">ID</div>
+                        <div class="profile-avatar">SK</div>
                         <div class="profile-info">
-                            <h4>Investor Demo</h4>
-                            <span>Access: Member</span>
+                            <h4>Suresh Kappala</h4>
+                            <span>suresh@stackly.org</span>
                         </div>
                     </div>
                 </div>
@@ -77,6 +77,22 @@
 
             <!-- Dashboard Content -->
             <div class="dashboard-content">
+                <!-- Welcome Banner with User Login Credentials -->
+                <div class="db-welcome-banner" style="background: linear-gradient(135deg, rgba(0, 82, 255, 0.12) 0%, rgba(0, 240, 255, 0.06) 100%); border: 1px solid var(--border-dark); border-radius: var(--border-radius); padding: 22px 28px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: #ffffff;">Welcome back, <span style="color: var(--accent-cyan);" class="user-display-name">Suresh Kappala</span> 👋</h3>
+                        <p style="font-size: 0.88rem; color: var(--text-dark-muted); margin: 0;">
+                            Logged in as: <strong style="color: #ffffff; font-family: monospace;" class="user-display-email">suresh@stackly.org</strong> &nbsp;|&nbsp; 
+                            Role: <strong style="color: var(--accent-cyan);" class="user-display-role">Investor Client</strong> &nbsp;|&nbsp; 
+                            Session: <span class="status-badge completed" style="padding: 2px 8px; font-size: 0.72rem;">Active &amp; Verified</span>
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="404.html" class="btn btn-secondary btn-sm" style="border: 1px solid var(--border-dark);">Account Settings</a>
+                        <a href="404.html" class="btn btn-cyan btn-sm">Deposit Assets</a>
+                    </div>
+                </div>
+
                 <!-- Status Grid Widgets -->
                 <div class="db-stats-grid">
                     <!-- Total -->
@@ -185,11 +201,11 @@
                     <div class="db-card">
                         <div class="db-card-header">
                             <h3 class="db-card-title">Recent Transactions</h3>
-                            <a href="transactions.html" style="font-size:0.8rem; color:var(--accent-cyan); font-weight:600;">See All</a>
+                            <a href="404.html" style="font-size:0.8rem; color:var(--accent-cyan); font-weight:600;">See All</a>
                         </div>
                         
                         <div class="table-container" style="border:none;">
-                            <table class="tx-table" style="min-width: 450px;">
+                            <table class="tx-table" style="width: 100%;">
                                 <thead>
                                     <tr>
                                         <th>Asset</th>
@@ -226,7 +242,7 @@
         </main>
     </div>
 
-    <script src="js/script.js?v=2.6"></script>
+    <script src="js/script.js?v=3.0"></script>
     <div class="drawer-overlay"></div>
 </body>
 </html>
