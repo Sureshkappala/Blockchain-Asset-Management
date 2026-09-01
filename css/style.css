@@ -1042,6 +1042,14 @@ section:hover, header.hero:hover {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
+.team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+@media (min-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
 .resource-card {
     border-radius: var(--border-radius);
     overflow: hidden;
