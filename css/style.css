@@ -11,29 +11,29 @@
     --font-primary: 'Inter', sans-serif;
     --font-heading: 'Poppins', sans-serif;
 
-    /* Theme Colors (Dark Sections) */
+    /* Theme Colors (Unified Dark Theme Palette) */
     --bg-dark-primary: #060b19;
     --bg-dark-secondary: #0d1527;
-    --bg-dark-tertiary: #17223b;
-    --card-dark: #121e36;
+    --bg-dark-tertiary: #131f38;
+    --card-dark: #0f1c38;
     --text-dark-main: #f8fafc;
     --text-dark-muted: #94a3b8;
 
-    /* Outlines Colors */
-    --outerline-pink: rgba(255, 0, 127, 0.22);
-    --outerline-green: rgba(57, 255, 20, 0.22);
-    --outerline-color: var(--outerline-pink); /* Set default to pink. Can switch to --outerline-green */
+    /* Outlines & Borders (Clean Cyan & Slate Highlights) */
+    --outerline-cyan: rgba(0, 240, 255, 0.22);
+    --outerline-blue: rgba(0, 82, 255, 0.22);
+    --outerline-color: var(--outerline-cyan);
 
-    --border-dark: var(--outerline-color);
+    --border-dark: rgba(0, 240, 255, 0.16);
 
-    /* Theme Colors (Light Sections) */
-    --bg-light-primary: #f8fafc;
-    --bg-light-secondary: #ffffff;
-    --bg-light-tertiary: #f1f5f9;
-    --card-light: #ffffff;
-    --text-light-main: #0f172a;
-    --text-light-muted: #64748b;
-    --border-light: var(--outerline-color);
+    /* Harmonious Secondary Sections Palette */
+    --bg-light-primary: #0a1226;
+    --bg-light-secondary: #0f1c38;
+    --bg-light-tertiary: #142447;
+    --card-light: #0f1c38;
+    --text-light-main: #f8fafc;
+    --text-light-muted: #94a3b8;
+    --border-light: rgba(0, 240, 255, 0.16);
 
     /* Primary Accent & Semantic Colors */
     --accent-blue: #0052ff;
